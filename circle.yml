@@ -27,4 +27,4 @@ test:
   override:
     - npm test
     - python setup.py test
-    - codeclimate-test-reporter
+    # - codeclimate-test-reporter

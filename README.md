@@ -1,4 +1,4 @@
-# Psi
+# Psi [![CircleCI](https://circleci.com/gh/kengz/psi.svg?style=shield)](https://circleci.com/gh/kengz/psi)
 The horsemen are getting back to work. New trading project Psi - ψ.
 
 ## Init

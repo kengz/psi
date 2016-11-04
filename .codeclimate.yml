@@ -1,0 +1,27 @@
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - javascript
+        python:
+          mass_threshold: 40
+  fixme:
+    enabled: true
+  eslint:
+    enabled: true
+  csslint:
+    enabled: true
+  radon:
+    enabled: true
+  pep8:
+    enabled: true
+
+ratings:
+  paths:
+  - "**.js"
+  - "**.jsx"
+  - "**.py"
+
+exclude_paths:
+- test/

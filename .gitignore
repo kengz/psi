@@ -87,3 +87,14 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Build and Release Folders
+bin-debug/
+bin-release/
+node_modules/
+coverage/
+logs/
+npm-debug.log*
+
+# System files
+.DS_Store

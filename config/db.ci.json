@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "root",
+    "username": "ubuntu",
     "password": null,
     "database": "psi_dev",
     "host": "127.0.0.1",
@@ -8,7 +8,7 @@
     "logging": false
   },
   "test": {
-    "username": "root",
+    "username": "ubuntu",
     "password": null,
     "database": "psi_test",
     "host": "127.0.0.1",
@@ -16,7 +16,7 @@
     "logging": false
   },
   "production": {
-    "username": "root",
+    "username": "ubuntu",
     "password": null,
     "database": "psi_prod",
     "host": "127.0.0.1",

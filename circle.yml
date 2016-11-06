@@ -5,6 +5,8 @@ machine:
     version: 6
   environment:
     TF_BINARY_URL: https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0rc1-cp35-cp35m-linux_x86_64.whl
+  services:
+    - mysql
 
 dependencies:
   pre:
@@ -22,7 +24,21 @@ dependencies:
     - pip install pytest-cov
     - npm install
 
+database:
+  override:
+    - mv config/db.ci.json config/db.json
+    - node src/db.js
+    - node_modules/.bin/sequelize db:migrate --env test
+
 test:
   override:
     - npm test
-    - python setup.py test && coverage xml && python-codacy-coverage -r coverage.xml
+    - python setup.py test
+  post:
+    - cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage
+    - coverage xml && python-codacy-coverage -r coverage.xml
+
+general:
+  branches:
+    ignore:
+      - gh-pages

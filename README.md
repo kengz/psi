@@ -1,4 +1,4 @@
-# Psi [![CircleCI](https://circleci.com/gh/kengz/psi.svg?style=shield)](https://circleci.com/gh/kengz/psi)
+# Psi [![CircleCI](https://circleci.com/gh/kengz/psi.svg?style=shield)](https://circleci.com/gh/kengz/psi) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1bfadfa824fc46eab2f86841b46fb8c6)](https://www.codacy.com/app/kengzwl/psi?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kengz/psi&amp;utm_campaign=Badge_Grade)
 The horsemen are getting back to work. New trading project Psi - ψ.
 
 

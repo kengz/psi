@@ -4,7 +4,6 @@ machine:
   node:
     version: 6
   environment:
-    CODECLIMATE_REPO_TOKEN: ''
     TF_BINARY_URL: https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0rc1-cp35-cp35m-linux_x86_64.whl
 
 dependencies:
@@ -19,12 +18,11 @@ dependencies:
   override:
     - pip install $TF_BINARY_URL
     - pip install keras
-    - pip install codeclimate-test-reporter
+    - pip install codacy-coverage
     - pip install pytest-cov
     - npm install
 
 test:
   override:
     - npm test
-    - python setup.py test
-    # - codeclimate-test-reporter
+    - python setup.py test && coverage xml && python-codacy-coverage -r coverage.xml

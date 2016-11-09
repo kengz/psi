@@ -15,23 +15,28 @@ python setup.py install # pip dependencies
 
 ## Run
 
-We use `async/await`, so run `node` with the harmony flag, like
-
-```shell
-node --harmony-async-await index.js
-```
-
-But for safe practices, run all commands via `npm`, i.e.
+We use `async/await`, so run `node` with the harmony flag. But for safe practices, run all commands via `npm`:
 
 ```shell
 npm start
 ```
+
+Alternatively to test-run a single script, use node with flag
+```shell
+node --harmony-async-await src/index.js
+```
+
+### Pre-commit checks
+
+- `npm run lint` Style-check your code with `eslint`
+- `npm test` Run tests
 
 
 ## Roadmap
 
 Backend - pythong mostly, for data science. See the [Github Project for to dos](https://github.com/kengz/psi/projects/1)
 
-- [ ] add jslint file for codacy
+- [x] project setup, CI, CC, config, db
+- [x] add jslint file for codacy
 - [ ] get data sources, pipe to db, 
 - [ ] write migration and setup of entire pipe

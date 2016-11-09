@@ -26,16 +26,16 @@ function createDb() {
     dbConfig)
   var nodeEnvs = ['test', 'development', 'production']
   var createDbQueries = _.map(nodeEnvs, (nodeEnv) => {
-    return "CREATE DATABASE " + _.get(dbEnvConfig, `${nodeEnv}.database`) + ";"
+    return 'CREATE DATABASE ' + _.get(dbEnvConfig, `${nodeEnv}.database`) + ';'
   })
 
   return Promise.any(
     _.map(createDbQueries, (createDbQuery) => {
       return sysSeq.query(createDbQuery)
     })).then(() => {
-    sysSeq.close()
-    log.info(`Created the psi databases`)
-  }).catch(e => { log.error(JSON.stringify(e, null, 2)) })
+      sysSeq.close()
+      log.info(`Created the psi databases`)
+    }).catch(e => { log.error(JSON.stringify(e, null, 2)) })
 }
 
 /* istanbul ignore next */

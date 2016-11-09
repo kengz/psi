@@ -16,7 +16,7 @@ else
   if [ $(uname) == "Darwin" ]; then
     brew install node
   else
-    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
     sudo apt-get install -y nodejs
   fi
 fi
@@ -56,32 +56,6 @@ else
   echo "MySQL is already started"
 fi
 
-# # install postgres
-# if which postgres >/dev/null; then
-#   echo "Postgresql is already installed"
-# else
-#   if [ $(uname) == "Darwin" ]; then
-#     brew install postgres
-#     brew services start postgresql
-#     sleep 5
-#     createuser -s postgres
-#   else
-#     sudo apt-get -y install postgresql postgresql-contrib
-#   fi
-# fi
-
-# # start postgres
-# UP=$(pgrep postgres | wc -l);
-# if [ "$UP" -eq 0 ];
-# then
-#   if [ $(uname) == "Darwin" ]; then
-#     brew services start postgresql
-#   else
-#     service postgresql start
-#   fi
-# else
-#   echo "Postgresql is already started"
-# fi
 
 # install pip modules
 if python3 -m pip show six socketIO-client >/dev/null; then

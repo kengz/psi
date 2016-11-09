@@ -7,6 +7,8 @@
     "test": "test"
   },
   "scripts": {
+    "setup": "bin/setup",
+    "start": "node --harmony-async-await index.js",
     "test": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
     "posttest": "rm -rf *egg-info *.xml npm-debug.log*"
   },

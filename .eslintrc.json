@@ -1,11 +1,11 @@
 {
-    "extends": "standard",
-    "installedESLint": true,
+    "extends": "airbnb",
     "plugins": [
-        "standard",
-        "promise"
+        "react",
+        "jsx-a11y",
+        "import"
     ],
     "rules": {
-      "space-before-function-paren": 0
+        "semi": ["error", "never"]
     }
 }

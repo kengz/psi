@@ -9,7 +9,7 @@
   "scripts": {
     "setup": "bin/setup",
     "start": "node --harmony-async-await src/index.js",
-    "lint": "eslint src/",
+    "lint": "eslint src/ db/ test/",
     "test": "NODE_ENV=test istanbul cover _mocha",
     "posttest": "rm -rf *egg-info *.xml npm-debug.log*"
   },

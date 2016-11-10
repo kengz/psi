@@ -1,10 +1,13 @@
+const log = require('./log')
 const Promise = require('bluebird')
 
-// Node that async/await merely 'hides' the promises and save us from using nested .then(). Its argument is still a Promise objet
+// Node that async/await merely 'hides' the promises and
+// save us from using nested .then().
+// Its argument is still a Promise objet
 async function demo() {
-  console.log('starting wait')
+  log.info('starting wait')
   await Promise.delay(3000)
-  console.log('stopping wait')
+  log.info('stopping wait')
 }
 
 demo()

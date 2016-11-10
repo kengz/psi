@@ -1,10 +1,10 @@
+const log = require('./log')
+const dbEnvConfig = require('../config/db.json')
 const Promise = require('bluebird')
 const { exec } = require('child_process')
 const _ = require('lodash')
-const path = require('path')
 const Sequelize = require('sequelize')
-const log = require(path.join(__dirname, 'log'))
-const dbEnvConfig = require(path.join(__dirname, '..', 'config', 'db.json'))
+
 Promise.config({ warnings: false })
 
 /* istanbul ignore next */
@@ -24,31 +24,28 @@ function createDb() {
     dbConfig.username,
     dbConfig.password,
     dbConfig)
-  var nodeEnvs = ['test', 'development', 'production']
-  var createDbQueries = _.map(nodeEnvs, (nodeEnv) => {
-    return 'CREATE DATABASE ' + _.get(dbEnvConfig, `${nodeEnv}.database`) + ';'
+  const nodeEnvs = ['test', 'development', 'production']
+  const createDbQueries = _.map(nodeEnvs, (nodeEnv) => {
+    const dbName = _.get(dbEnvConfig, `${nodeEnv}.database`)
+    return `CREATE DATABASE ${dbName};`
   })
 
   return Promise.any(
     _.map(createDbQueries, (createDbQuery) => {
-      return sysSeq.query(createDbQuery)
+      sysSeq.query(createDbQuery)
     })).then(() => {
       sysSeq.close()
-      log.info(`Created the psi databases`)
-    }).catch(e => { log.error(JSON.stringify(e, null, 2)) })
+      log.info('Created the psi databases')
+    }).catch(e => log.error(JSON.stringify(e, null, 2)))
 }
 
 /* istanbul ignore next */
 function authDb() {
   return sequelize
     .authenticate()
-    .then((e) => {
-      log.info('Authenticated database successfully')
-    }).catch((e) => {
-      return createDb()
-    }).finally(() => {
-      return sequelize.close()
-    })
+    .then(() => log.info('Authenticated database successfully'))
+    .catch(() => createDb())
+    .finally(() => sequelize.close())
 }
 
 /* istanbul ignore next */
@@ -66,8 +63,8 @@ function migrateDb() {
 }
 
 module.exports = {
-  authDb: authDb,
-  migrateDb: migrateDb
+  authDb,
+  migrateDb,
 }
 
 /* istanbul ignore next */

@@ -1,9 +1,6 @@
-// chai assertation library
 const chai = require('chai')
-const expect = chai.expect
-const path = require('path')
-var sample = require(path.join('..', 'src', 'example'))
 
+const expect = chai.expect
 
 suite('Sample test for CI build', () => {
   suite('Test suite 1', () => {

@@ -1,12 +1,11 @@
-'use strict'
-
 const fs = require('fs')
 const path = require('path')
 const Sequelize = require('sequelize')
+const dbConfig = require('../../config/db.json')
+
+const config = dbConfig[process.env.NODE_ENV || 'development']
 const basename = path.basename(module.filename)
-const env = process.env.NODE_ENV || 'development'
-const config = require(path.join(__dirname, '..', '..', 'config', 'db.json'))[env]
-let db = {}
+const db = {}
 let sequelize
 
 if (config.use_env_variable) {
@@ -18,10 +17,11 @@ if (config.use_env_variable) {
 fs
 .readdirSync(__dirname)
 .filter((file) => {
-  return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js')
+  const fil = (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js')
+  return fil
 })
 .forEach((file) => {
-  var model = sequelize['import'](path.join(__dirname, file))
+  const model = sequelize.import(`./${file}`)
   db[model.name] = model
 })
 

@@ -51,7 +51,7 @@ function authDb() {
 /* istanbul ignore next */
 function migrateDb() {
   return new Promise((resolve, reject) => {
-    let cmd = `./node_modules/.bin/sequelize db:migrate --env ${process.env.NODE_ENV}`
+    const cmd = `./node_modules/.bin/sequelize db:migrate --env ${process.env.NODE_ENV}`
     exec(cmd, (err, stdout, stderr) => {
       if (err) {
         log.error(stderr.toString())

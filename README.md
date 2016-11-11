@@ -28,7 +28,7 @@ node --harmony-async-await src/index.js
 
 ### Pre-commit checks
 
-- `npm run lint` Style-check your code with `eslint`
+- `npm run lint` Style-check your code with `eslint`. Useful: install [this Sublime linter](https://github.com/roadhump/SublimeLinter-eslint)
 - `npm test` Run tests
 
 

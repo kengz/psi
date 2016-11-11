@@ -12,7 +12,7 @@
     "lint": "eslint src/ db/ test/",
     "test": "NODE_ENV=test istanbul cover _mocha",
     "posttest": "rm -rf *egg-info *.xml npm-debug.log*",
-    "clear": "rm -rf coverage htmlcov *egg-info *.xml npm-debug.log*"
+    "clear": "rm -rf coverage htmlcov *egg-info .coverage *.xml npm-debug.log*"
   },
   "repository": {
     "type": "git",

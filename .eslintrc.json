@@ -11,6 +11,7 @@
         "mocha": true
     },
     "rules": {
-        "semi": ["error", "never"]
+        "semi": ["error", "never"],
+        "import/no-unresolved": 0
     }
 }

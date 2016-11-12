@@ -13,6 +13,14 @@ python setup.py install # pip dependencies
 ```
 
 
+## Setup
+
+### OKCoin (because they can't hiring a fucking good UX designer)
+
+- get an account at [OKCoin](https://www.okcoin.com).
+- Create a [new API](https://www.okcoin.com/user/api.do) and set your `api_key`, `secret` in `config/default.json`
+
+
 ## Run
 
 We use `async/await`, so run `node` with the harmony flag. But for safe practices, run all commands via `npm`:

@@ -1,4 +1,5 @@
 const log = require('./log')
+const { demoTicker } = require('./okcoin-data')
 const Promise = require('bluebird')
 
 // Node that async/await merely 'hides' the promises and
@@ -11,3 +12,4 @@ async function demo() {
 }
 
 demo()
+demoTicker()

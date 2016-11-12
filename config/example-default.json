@@ -1,3 +1,9 @@
 {
   "PROJECT_NAME": "psi",
+  "OKCoin": {
+    "name": "psidev",
+    "rootUrl": "https://www.okcoin.com/api/v1",
+    "api_key": null,
+    "secret": null
+  }
 }

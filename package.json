@@ -12,7 +12,9 @@
     "lint": "eslint src/ db/ test/",
     "test": "NODE_ENV=test istanbul cover _mocha",
     "posttest": "rm -rf *egg-info *.xml npm-debug.log*",
-    "clear": "rm -rf coverage htmlcov *egg-info .coverage *.xml npm-debug.log*"
+    "clear": "rm -rf coverage htmlcov *egg-info .coverage *.xml npm-debug.log*",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -47,6 +49,8 @@
     "mysql2": "^1.1.1",
     "sequelize": "^3.24.8",
     "unirest": "^0.5.1",
-    "winston": "^2.3.0"
-  }
+    "winston": "^2.3.0",
+    "snyk": "^1.83.0"
+  },
+  "snyk": true
 }
